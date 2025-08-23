@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 import Tasks from './components/Tasks';
-import Form from './components/Form';
 
 let tasks = [
   { title: 'Task 1', description: 'make hw' },
@@ -11,16 +10,10 @@ let tasks = [
   { title: 'Task 3', description: 'task 3' },
 ];
 
-const addTask = (newTask) => {
-  tasks.push(newTask);
-  renderApp(); // Перерендерити додаток
-};
-
 const renderApp = () => {
   const root = ReactDOM.createRoot(document.getElementById('root'));
   root.render(
     <React.StrictMode>
-      <Form addTask={addTask} />
       <Tasks tasks={tasks} />
     </React.StrictMode>
   );
